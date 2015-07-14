@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 		less: {
 			style: {
 				files: {
-					"css/style.css":["less/style.less"]
+					"build/css/style.css":["source/less/style.less"]
 				}
 			}
 		},
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 				browsers: ["last 4 versions", "ie 10"]
 			},
 			style: {
-				src: "css/style.css"
+				src: "build/css/style.css"
 			}
 		},
 		cssmin: {
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 					report: "gzip"
 				},
 				files: {
-					"css/style.min.css":["css/style.css"]
+					"build/css/style.min.css":["build/css/style.css"]
 				}
 			}
 		},
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					src: ["img/**/*.{png,jpg,gif,svg}"]
+					src: ["build/img/**/*.{png,jpg,gif,svg}"]
 				}]
 			}
 		},
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: {
-					"index.min.html":"index.html"
+					"build/index.min.html":"build/index.html"
 				}
 			}
 		},
