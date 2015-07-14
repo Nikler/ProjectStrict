@@ -1,8 +1,6 @@
 module.exports = function(grunt) {
 
-	grunt.loadNpmTasks("grunt-contrib-less");
-	grunt.loadNpmTasks("grunt-autoprefixer");
-	grunt.loadNpmTasks("grunt-contrib-cssmin");
+	require("load-grunt-tasks")(grunt);
 	
 	grunt.initConfig({
 		less: {
@@ -32,5 +30,9 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-
+	grunt.registerTask("build",[
+		"less",
+		"autoprefixer",
+		"cssmin"
+	]);
 };
